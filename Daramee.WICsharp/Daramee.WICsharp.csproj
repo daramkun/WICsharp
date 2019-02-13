@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net45;netstandard2.0</TargetFrameworks>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Version>0.0.1</Version>
+    <Authors>Daramee</Authors>
+    <Company />
+    <Product>WICsharp</Product>
+  </PropertyGroup>
+
+  <Import Project="..\Daramee.WICsharp.Shared\Daramee.WICsharp.Shared.projitems" Label="Shared" />
+
+</Project>

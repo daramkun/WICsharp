@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.271
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Daramee.WICsharp.Shared", "Daramee.WICsharp.Shared\Daramee.WICsharp.Shared.shproj", "{ED567D0A-C5F0-45FA-B881-454BD92DE1C1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Daramee.WICsharp", "Daramee.WICsharp\Daramee.WICsharp.csproj", "{3AC7F96B-282F-4101-9F79-FF4C686A2F1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{0D226F9A-5B33-4618-A3CA-D60876E8897A}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Daramee.WICsharp.Shared\Daramee.WICsharp.Shared.projitems*{ed567d0a-c5f0-45fa-b881-454bd92de1c1}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3AC7F96B-282F-4101-9F79-FF4C686A2F1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AC7F96B-282F-4101-9F79-FF4C686A2F1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AC7F96B-282F-4101-9F79-FF4C686A2F1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AC7F96B-282F-4101-9F79-FF4C686A2F1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D226F9A-5B33-4618-A3CA-D60876E8897A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D226F9A-5B33-4618-A3CA-D60876E8897A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D226F9A-5B33-4618-A3CA-D60876E8897A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D226F9A-5B33-4618-A3CA-D60876E8897A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {18CE0358-F60B-473A-8996-7232D92C9252}
+	EndGlobalSection
+EndGlobal

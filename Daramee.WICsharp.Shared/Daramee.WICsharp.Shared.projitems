@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>ed567d0a-c5f0-45fa-b881-454bd92de1c1</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Daramee.WICsharp</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\StreamExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\VARTYPE.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Guids\ContainerFormats.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Guids\PixelFormats.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Guids\Vendors.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Structs\EXCEPINFO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IErrorLog.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IEnumString.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IWICBitmapDecoder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IWICBitmapFlipRotator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IWICPalette.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IWICBitmapSource.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IWICComponentInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IWICBitmap.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IWICBitmapLock.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IWICFormatConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IWICBitmapScaler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IWICBitmapClipper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IWICFastMetadataEncoder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IWICMetadataQueryWriter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IWICMetadataQueryReader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IWICBitmapCodecInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IWICBitmapDecoderInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IWICBitmapFrameDecode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IWICBitmapEncoder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IWICBitmapEncoderInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IWICBitmapFrameEncode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IPropertyBag2.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Structs\PROPBAG2.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Structs\PROPVARIANT.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Structs\HRESULT.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IWICImagingFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\WICBitmapAlphaChannelOption.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\WICBitmapCreateCacheOption.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\WICDecodeOptions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\WICImagingFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\WICBitmapPaletteType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Structs\VARIANT.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Structs\WICRect.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\WICComponentType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\WICBitmapDitherType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\WICBitmapInterpolationMode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\WICBitmapTransformOptions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Structs\WICBitmapPattern.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\WICBitmapEncoderCacheOption.cs" />
+  </ItemGroup>
+</Project>
