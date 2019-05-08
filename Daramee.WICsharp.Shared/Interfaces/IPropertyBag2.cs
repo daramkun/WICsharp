@@ -19,8 +19,8 @@ namespace Daramee.WICsharp
 
 		HRESULT Write (
 			uint cProperties,
-			PROPBAG2 [] pPropBag,
-			VARIANT [] pvarValue );
+			[MarshalAs ( UnmanagedType.LPStruct )] PROPBAG2 pPropBag,
+			[MarshalAs ( UnmanagedType.LPStruct )] VARIANT pvarValue );
 
 		HRESULT CountProperties (
 			out uint pcProperties );

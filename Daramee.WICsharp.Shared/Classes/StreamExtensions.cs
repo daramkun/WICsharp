@@ -23,29 +23,50 @@ namespace Daramee.WICsharp
 
 			public void CopyTo ( IStream pstm, long cb, IntPtr pcbRead, IntPtr pcbWritten )
 			{
-				throw new NotImplementedException ();
-			}
+				byte [] buffer = new byte [ 4096 ];
+				int totalRead = 0, totalWrite = 0;
+				IntPtr writeBuffer = Marshal.AllocCoTaskMem ( 4 );
+				do
+				{
+					int read = BaseStream.Read ( buffer, 0, ( int ) Math.Min ( cb - totalRead, buffer.Length ) );
+					if ( read == 0 )
+						break;
+					totalRead += read;
+					pstm.Write ( buffer, read, writeBuffer );
+					int written = Marshal.ReadInt32 ( writeBuffer );
+					if ( written != 0 )
+						totalWrite += written;
+				} while ( totalRead != cb );
+				Marshal.FreeCoTaskMem ( writeBuffer );
 
-			public void LockRegion ( long libOffset, long cb, int dwLockType )
-			{
-				throw new NotImplementedException ();
+				if ( pcbRead != IntPtr.Zero )
+					Marshal.WriteInt32 ( pcbRead, totalRead );
+				if ( pcbWritten != IntPtr.Zero )
+					Marshal.WriteInt32 ( pcbWritten, totalWrite );
 			}
 
 			public void Read ( byte [] pv, int cb, IntPtr pcbRead )
 			{
 				if ( !BaseStream.CanRead )
-					throw new InvalidOperationException ( "Stream not readable" );
+					throw new IOException ( "Stream not readable." );
 				Marshal.WriteIntPtr ( pcbRead, new IntPtr ( BaseStream.Read ( pv, 0, cb ) ) );
 			}
 
-			public void Revert ()
+			public void Write ( byte [] pv, int cb, IntPtr pcbWritten )
 			{
-				throw new NotImplementedException ();
+				if ( !BaseStream.CanWrite )
+					throw new IOException ( "Stream is not writable." );
+				BaseStream.Write ( pv, 0, cb );
+				Marshal.WriteIntPtr ( pcbWritten, new IntPtr ( cb ) );
 			}
 
 			public void Seek ( long dlibMove, int dwOrigin, IntPtr plibNewPosition )
 			{
-				Marshal.WriteIntPtr ( plibNewPosition, new IntPtr ( BaseStream.Seek ( dlibMove, ( SeekOrigin ) dwOrigin ) ) );
+				if ( !BaseStream.CanSeek )
+					throw new IOException ( "Stream not seekable." );
+				long seekPos = BaseStream.Seek ( dlibMove, ( SeekOrigin ) dwOrigin );
+				if ( plibNewPosition != IntPtr.Zero )
+					Marshal.WriteIntPtr ( plibNewPosition, new IntPtr ( seekPos ) );
 			}
 
 			public void SetSize ( long libNewSize )
@@ -59,7 +80,14 @@ namespace Daramee.WICsharp
 				{
 					cbSize = BaseStream.Length,
 					pwcsName = ( BaseStream is FileStream ) ? ( BaseStream as FileStream ).Name : null,
+					type = 2,                               // Stream (STGTY_STREAM)
+					grfMode = BaseStream.CanWrite ? 1 : 0,
 				};
+			}
+
+			public void LockRegion ( long libOffset, long cb, int dwLockType )
+			{
+				throw new NotImplementedException ();
 			}
 
 			public void UnlockRegion ( long libOffset, long cb, int dwLockType )
@@ -67,12 +95,9 @@ namespace Daramee.WICsharp
 				throw new NotImplementedException ();
 			}
 
-			public void Write ( byte [] pv, int cb, IntPtr pcbWritten )
+			public void Revert ()
 			{
-				if ( !BaseStream.CanWrite )
-					throw new InvalidOperationException ( "Stream is not writeable." );
-				BaseStream.Write ( pv, 0, cb );
-				Marshal.WriteIntPtr ( pcbWritten, new IntPtr ( cb ) );
+				throw new NotImplementedException ();
 			}
 		}
 
