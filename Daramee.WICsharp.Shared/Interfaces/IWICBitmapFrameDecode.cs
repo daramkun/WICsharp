@@ -10,6 +10,26 @@ namespace Daramee.WICsharp
 		, InterfaceType ( ComInterfaceType.InterfaceIsIUnknown )]
 	public interface IWICBitmapFrameDecode : IWICBitmapSource
 	{
+		new HRESULT GetSize (
+			out uint puiWidth,
+			out uint puiHeight );
+
+		new HRESULT GetPixelFormat (
+			out Guid pPixelFormat );
+
+		new HRESULT GetResolution (
+			out double pDpiX,
+			out double pDpiY );
+
+		new HRESULT CopyPalette (
+			[In, MarshalAs ( UnmanagedType.Interface )] IWICPalette pIPalette );
+
+		new HRESULT CopyPixels (
+			ref WICRect prc,
+			uint cbStride,
+			uint cbBufferSize,
+			IntPtr pbBuffer );
+
 		HRESULT GetMetadataQueryReader (
 			out IWICMetadataQueryReader ppIMetadataQueryReader );
 
